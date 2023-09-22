@@ -38,7 +38,7 @@ export default function ToDo() {
     return (
         <div>
             <Link to="/">home</Link>
-            <h1>Adicionar óculos em sua coleção</h1>  
+            <h1>Adicionar jogos em sua coleção</h1>  
             <div classname="flex.conteiner"> 
             <form onSubmit={salvar}>
                 <p><strong>Nome:</strong></p>
