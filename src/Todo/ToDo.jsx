@@ -1,17 +1,17 @@
-import { useState } from "react";
+
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./style.css"
 
 
 export default function ToDo() {
-    const listaLocalStorage = JSON.parse(localStorage.getItem("Lista"));
+   const listaLocalStorage = JSON.parse(localStorage.getItem("Lista"));
    const [nome, setNome ] = useState("");
    const [marca, setMarca ] = useState("");
    const [preco, setPreco ] = useState("");
    const [img, setImg] = useState("");
    const [lista, setLista ] = useState(listaLocalStorage || []);
-   const [id,setId] = useState(1);
+   const [id,setId] = useState(listaLocalStorage[listaLocalStorage.length - 1]?.id + 1 || 1 );
 
    useEffect(() => {
     localStorage.setItem("Lista", JSON.stringify(lista));
@@ -70,6 +70,11 @@ export default function ToDo() {
             </div>    
             {lista.map((ativ)=>
             <div key= {ativ.id}>
+
+                <Link to={'/detalhe/$ {objeto.id}'}>
+                <p>{objeto.atividade}</p>
+                </Link>
+                
                 <p><strong>Tipo:</strong>{ativ.tipo}</p>
                 <p><strong>Marca:</strong>{ativ.marca}</p>
                 <p><strong>Preço:</strong>R${ativ.preco}</p>
