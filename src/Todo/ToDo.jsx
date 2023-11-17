@@ -71,11 +71,10 @@ export default function ToDo() {
             {lista.map((ativ)=>
             <div key= {ativ.id}>
 
-                <Link to={'/detalhe/$ {objeto.id}'}>
-                <p>{objeto.atividade}</p>
+                <Link to={`/detalhe/${ativ.id}`}>
+                <p><strong>Nome:</strong>{ativ.nome}</p>
                 </Link>
                 
-                <p><strong>Tipo:</strong>{ativ.tipo}</p>
                 <p><strong>Marca:</strong>{ativ.marca}</p>
                 <p><strong>Preço:</strong>R${ativ.preco}</p>
                 <p><strong>Imagem:</strong></p>
